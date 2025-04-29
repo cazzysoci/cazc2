@@ -27,11 +27,18 @@ try {
 }
 
 const Methods = [
-	"GET",
-	"POST",
-	"HEAD",
-	"DELETE",
-	"PUT"
+	         "GET", 
+                 "HEAD", 
+                 "POST", 
+                 "PUT", 
+                 "DELETE", 
+                 "CONNECT", 
+                 "OPTIONS", 
+                 "TRACE", 
+                 "PATCH", 
+                 "PURGE", 
+                 "LINK", 
+                 "UNLINK"
 ];
 
 const nullHexs = [
