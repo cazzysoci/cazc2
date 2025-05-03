@@ -1,5 +1,5 @@
-git clone https://github.com/neonterds/CazzySociC2.git
+git clone https://github.com/cazzysoci/cazc2.git
 
-cd CazzySociC2
+cd cazc2
 
 python3 installer.py
