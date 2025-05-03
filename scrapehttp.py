@@ -30,7 +30,7 @@ list = [
          
 
 if __name__ == "__main__":
-    file = "proxy.txt"
+    file = "http.txt"
     
     try:
         if os.path.isfile(file):
