@@ -6,8 +6,8 @@ if (process.argv.length <= 2) {
     process.exit(-1);
 }
 var target = process.argv[2];
-var parsed = new url(target);
-var host = new url(target).host;
+var parsed = url.parse(target);
+var host = url.parse(target).host;
 var time = process.argv[3];
 
 process.on('uncaughtException', function (e) { });
