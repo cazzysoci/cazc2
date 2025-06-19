@@ -32,6 +32,8 @@ elif rn == '2':
     os.system("pip3 install axios")
     os.system("pip3 install -r requirements.txt")
     os.system("gcc tcp-bypass.c -o tcp-bypass")
+    os.system("gcc flood_attack.c -o flood_attack")
+    
 else:
     print("?")
 
